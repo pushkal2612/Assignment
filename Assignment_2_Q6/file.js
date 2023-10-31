@@ -4,7 +4,7 @@ const fs=require ("fs")
 const createtodo =(todo)=>{
     const alltodo=loadtodo()
     const duplicate=alltodo.find(ele=>{
-        return ele.name == data.name
+        return ele.title == todo.title
     })
     if(duplicate)
     {
@@ -23,7 +23,7 @@ const Viewtodo=()=>{
 }
 const loadtodo=()=>{
     try{
-        const todo=fs.readFileSync("todo.json","utf-8")
+        const todo=fs.readFileSync("data.json","utf-8")
         return JSON.parse(todo);
     }
     catch(error)
